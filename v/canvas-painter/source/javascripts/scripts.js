@@ -48,6 +48,10 @@ canvas.addEventListener('mouseup', function() {
     canvas.removeEventListener('mousemove', onPaint, false);
 }, false);
 
+function resetArea() {
+  canvas.removeEventListener('mousemove', onPaint, false);
+};
+
 //basic values
 
 brush.lineWidth = 3;
@@ -64,11 +68,11 @@ function clearCanvas() {
 //brush size
 
 function setBrushSize(clickArea) {
-  var width = window.getComputedStyle(brushWidthContainer).getPropertyValue('width');
-  width = parseFloat(width.substr(null));
-  brushWidthElement.style.width = ((clickArea.pageX - brushWidthContainer.offsetLeft) / width) * 100 + "%";
+  var width = window.getComputedStyle(brushWidthContainer).getPropertyValue('width'); //100px
+  width = parseFloat(width.substr(1)); //100
+  brushWidthElement.style.width = ((clickArea.pageX - brushWidthContainer.offsetLeft) / width) * 100 + "%"; //draw element
+  brush.lineWidth = width + 1;
   alert(width);
-  brush.lineWidth = width / 20;
 };
 
 //palette

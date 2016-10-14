@@ -5,21 +5,16 @@ body {
 }
 
 #app-container {
-  border: 1px;
-  border-color: black;
-  border-style: solid;
-  height: 640px;
+  border: 1px black solid;
+  height: 700px;
 }
-
-  #app-container > * {
-    display: inline-block;
-  }
 
 #canvas-container {
   margin: 20px;
   width: 600px;
   height: 600px;
   background-color: #BBBBBB;
+  display: inline-block;
 }
 
   #canvas {
@@ -27,9 +22,13 @@ body {
     height: 100%;
   }
 
+#instruments-container > * {
+  display: inline-block;
+}
+
 #palette-container {
   border: 1px #A6A2A2 solid;
-  width: 100px;
+  width: 50px;
   margin: 20px;
   vertical-align: top;
 }
@@ -39,7 +38,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 5px;
-    display: inline-block;
+
   }
 
   #palette-white {
