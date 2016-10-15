@@ -21,9 +21,9 @@ var brushWidthElement = document.getElementById('brush-width-element');
 var brush = canvas.getContext('2d');
 
 var canvasContainer = document.getElementById('canvas-container');
-var paint_style = getComputedStyle(canvasContainer);
-canvas.width = parseInt(paint_style.getPropertyValue('width'));
-canvas.height = parseInt(paint_style.getPropertyValue('height'));
+var paintStyle = getComputedStyle(canvasContainer);
+canvas.width = parseInt(paintStyle.getPropertyValue('width'));
+canvas.height = parseInt(paintStyle.getPropertyValue('height'));
 
 //draw events
 
@@ -69,10 +69,10 @@ function clearCanvas() {
 
 function setBrushSize(clickArea) {
   var width = window.getComputedStyle(brushWidthContainer).getPropertyValue('width'); //100px
-  width = parseFloat(width.substr(1)); //100
+  width = parseFloat(width.substr(null)); //100
   brushWidthElement.style.width = ((clickArea.pageX - brushWidthContainer.offsetLeft) / width) * 100 + "%"; //draw element
-  brush.lineWidth = width + 1;
-  alert(width);
+  //brush.lineWidth = width + 1;
+  //alert(width);
 };
 
 //palette

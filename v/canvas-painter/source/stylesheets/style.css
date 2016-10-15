@@ -9,6 +9,46 @@ body {
   height: 700px;
 }
 
+#rule-container {
+
+}
+
+  #rule-up {
+    width: 600px;
+    height: 20px;
+    margin: 0px 0px 0px 20px;
+    position: absolute;
+    display: inline-block;
+    background-color: #787B90;
+  }
+
+  #rule-down {
+    width: 600px;
+    height: 20px;
+    margin: 620px 0px 0px 20px;
+    position: absolute;
+    display: inline-block;
+    background-color: #787B90;
+  }
+
+  #rule-left {
+    width: 20px;
+    height: 600px;
+    margin: 20px 0px 0px 0px;
+    position: absolute;
+    display: inline-block;
+    background-color: #787B90;
+  }
+
+  #rule-right {
+    width: 20px;
+    height: 600px;
+    margin: 20px 0px 0px 620px;
+    position: absolute;
+    display: inline-block;
+    background-color: #787B90;
+  }
+
 #canvas-container {
   margin: 20px;
   width: 600px;
@@ -22,9 +62,14 @@ body {
     height: 100%;
   }
 
-#instruments-container > * {
+#instruments-container {
   display: inline-block;
+  position: absolute;
 }
+
+  #instruments-container > * {
+    display: inline-block;
+  }
 
 #palette-container {
   border: 1px #A6A2A2 solid;

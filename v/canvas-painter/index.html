@@ -4,16 +4,23 @@
     <meta charset="utf-8">
     <title>canvas-painter</title>
     <link rel="stylesheet" type="text/css" href="./source/stylesheets/style.css">
-
   </head>
   <body>
-    <div id="app-container" >
+    <script src="./source/javascripts/pageinit.js"></script>
+    <div id="app-container">
+
+      <div id="rule-container">
+        <div id="rule-up" onmousemove="resetArea();"></div>
+        <div id="rule-down" onmousemove="resetArea();"></div>
+        <div id="rule-left" onmousemove="resetArea();"></div>
+        <div id="rule-right" onmousemove="resetArea();"></div>
+      </div>
 
       <div id="canvas-container">
         <canvas id="canvas"></canvas>
       </div>
 
-      <div id="instruments-container"></div>
+      <div id="instruments-container">
         <div id="palette-container">
           <div id="palette-white"></div>
           <div id="palette-red"></div>
@@ -21,12 +28,15 @@
           <div id="palette-green"></div>
         </div>
         <div id="button-clear"></div>
+
+        <div id=""></div>
         <div id="brush-width-container">
+          <script>brushSegments();</script>
           <div id="brush-width-element"></div>
         </div>
       </div>
 
     </div>
-    <script src="./source/javascripts/scripts.js"></script>
+    <script src="./source/javascripts/main.js"></script>
   </body>
 </html>
