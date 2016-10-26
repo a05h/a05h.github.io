@@ -54,7 +54,7 @@ function resetArea() {
 
 //basic values
 
-brush.lineWidth = 3;
+brush.lineWidth = 5;
 brush.lineJoin = 'round';
 brush.lineCap = 'round';
 brush.strokeStyle = '#141414';
@@ -68,11 +68,22 @@ function clearCanvas() {
 //brush size
 
 function setBrushSize(clickArea) {
+  //draw control element
   var width = window.getComputedStyle(brushWidthContainer).getPropertyValue('width'); //100px
   width = parseFloat(width.substr(null)); //100
-  brushWidthElement.style.width = ((clickArea.pageX - brushWidthContainer.offsetLeft) / width) * 100 + "%"; //draw element
-  //brush.lineWidth = width + 1;
-  //alert(width);
+  brushWidthElement.style.width = ((clickArea.pageX - brushWidthContainer.offsetLeft) / width) * 100 + "%";
+  //set brush value
+  if (clickArea.pageX >= 742) {
+    thisClick = (clickArea.pageX - 742) / 5;
+    //alert(thisClick);
+  } else if (clickArea.pageX >= 83 && clickArea.pageX < 741) {
+    thisClick = (clickArea.pageX - 83) / 5;
+    //alert(thisClick);
+  } else {
+    thisClick = (clickArea.pageX - 22) / 5;
+    //alert(thisClick);
+  };
+  brush.lineWidth = thisClick;
 };
 
 //palette
