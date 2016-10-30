@@ -18,7 +18,12 @@ var brushWidthContainer = document.getElementById('brush-width-container');
 brushWidthContainer.addEventListener('click', setBrushSize, false);
 var brushWidthElement = document.getElementById('brush-width-element');
 
+var eraserWidthContainer = document.getElementById('eraser-width-container');
+eraserWidthContainer.addEventListener('click', setEraserSize, false);
+var eraserWidthElement = document.getElementById('eraser-width-element');
+
 var brush = canvas.getContext('2d');
+var eraser = canvas.getContext('2d');
 
 var canvasContainer = document.getElementById('canvas-container');
 var paintStyle = getComputedStyle(canvasContainer);
@@ -74,16 +79,20 @@ function setBrushSize(clickArea) {
   brushWidthElement.style.width = ((clickArea.pageX - brushWidthContainer.offsetLeft) / width) * 100 + "%";
   //set brush value
   if (clickArea.pageX >= 742) {
-    thisClick = (clickArea.pageX - 742) / 5;
-    //alert(thisClick);
+    var thisClick = (clickArea.pageX - 742) / 5;
   } else if (clickArea.pageX >= 83 && clickArea.pageX < 741) {
-    thisClick = (clickArea.pageX - 83) / 5;
-    //alert(thisClick);
+    var thisClick = (clickArea.pageX - 83) / 5;
   } else {
-    thisClick = (clickArea.pageX - 22) / 5;
-    //alert(thisClick);
+    var thisClick = (clickArea.pageX - 22) / 5;
   };
   brush.lineWidth = thisClick;
+};
+
+function setEraserSize(clickArea) {
+  //draw control element
+  var width = window.getComputedStyle(eraserWidthContainer).getPropertyValue('width'); //100px
+  width = parseFloat(width.substr(null)); //100
+  eraserWidthElement.style.width = ((clickArea.pageX - eraserWidthContainer.offsetLeft) / width) * 100 + "%";
 };
 
 //palette
