@@ -57,8 +57,8 @@
     float: left;
     width: 20px;
     height: 20px;
-    border-radius: 5px;
     margin: 3px;
+    border: none;
   }
 
   #palette-white {
@@ -76,31 +76,82 @@
 
 #colorpicker-container {
   float: left;
-  width: 50px;
-  height: 50px;
-  margin: 1px;
-  background-color: #AEAEB6;
+  width: 52px;
+  height: 52px;
+  background-color: #CFB5B5;
 }
 
+  #colorpicker-container > * {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    border: 1px #CFB5B5 solid;
+  }
+
  #primary-color {
-   width: 25px;
-   height: 25px;
+   margin: 2px 0px 0px 2px;
    background-color: #6868AC;
  }
 
  #secondary-color {
-   width: 25px;
-   height: 25px;
+   margin: 19px 0px 0px 19px;
    background-color: #F6F6F6;
  }
 
+/*vertical-sections > vertical-2*/
+
+#instruments-container {
+  width: 100%;
+  vertical-align: top;
+}
+
+  #instruments-container > * {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+  }
+
+  #instruments-container *:hover {
+    background-color: #AEAEB6;
+  }
+
+  #instrument-brush {
+    background: url("../images/brush-normal.png");
+    background-color: #CFB5B5;
+  }
+
+  #instrument-eraser {
+    background: url("../images/eraser-normal.png");
+    background-color: #CFB5B5;
+  }
+
+  #instrument-colorpicker {
+    background: url("../images/colorpicker-normal.png");
+    background-color: #CFB5B5;
+  }
+
 /*horizontal-sections > horizontal-1*/
+
+#title-name { /*instrument titles*/
+  font-family: "Sans", sans;
+  font-size: 11px;
+  color: #9A9797;
+  margin: 0px 0px 0px 5px;
+}
+
+#title-value { /*instrument titles*/
+  font-family: "Sans", sans;
+  font-size: 11px;
+  color: #9A9797;
+  margin: 0px 5px 0px 0px;
+}
 
 #brush-width-container {
   width: 100px;
   height: 8px;
-  background-color: #AEAEB6;
-  margin: 5px;
+  background-color: #CFB5B5;
+  margin: 0px 5px;
 }
 
   #brush-width-element {
@@ -112,8 +163,8 @@
 #eraser-width-container {
   width: 100px;
   height: 8px;
-  background-color: #AEAEB6;
-  margin: 5px;
+  background-color: #CFB5B5;
+  margin: 0px 5px;
 }
 
   #eraser-width-element {
@@ -125,14 +176,14 @@
 /*horizontal-sections > horizontal-4*/
 
 #button-clear {
-  background-color: #AEAEB6;
+  background-color: #CFB5B5;
   width: 35px;
   border-radius: 2px;
   font-family: "Sans", sans;
-  font-size:15px;
+  font-size: 15px;
   color: #323234;
-  padding:5px 10px;
-  text-decoration:none;
+  padding: 5px 10px;
+  text-decoration: none;
   margin: 5px;
   cursor: default;
   user-select: none;
@@ -142,7 +193,7 @@
 }
 
   #button-clear:hover {
-    background-color: #A4A4AD;
+    background-color: #AEAEB6;
   }
 
   #button-clear:active {

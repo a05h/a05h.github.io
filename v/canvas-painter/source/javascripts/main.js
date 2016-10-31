@@ -19,6 +19,13 @@ primaryColor.addEventListener('click', setPrimaryColor, false);
 var secondaryColor = document.getElementById('secondary-color');
 secondaryColor.addEventListener('click', setSecondaryColor, false);
 
+var instrumentBrush = document.getElementById('instrument-brush');
+instrumentBrush.addEventListener('click', pickInstrumentBrush, false);
+var instrumentEraser = document.getElementById('instrument-eraser');
+instrumentEraser.addEventListener('click', pickInstrumentEraser, false);
+var instrumentColorpicker = document.getElementById('instrument-colorpicker');
+instrumentColorpicker.addEventListener('click', pickInstrumentColorpicker, false);
+
 var brushWidthContainer = document.getElementById('brush-width-container');
 brushWidthContainer.addEventListener('click', setBrushSize, false);
 var brushWidthElement = document.getElementById('brush-width-element');
@@ -34,6 +41,11 @@ var canvasContainer = document.getElementById('canvas-container');
 var paintStyle = getComputedStyle(canvasContainer);
 canvas.width = parseInt(paintStyle.getPropertyValue('width'));
 canvas.height = parseInt(paintStyle.getPropertyValue('height'));
+
+const colorWhite = '#F6F6F6';
+const colorRed = '#E61932';
+const colorBlue = '#565BCF';
+const colorGreen = '#6BB438';
 
 //draw events
 
@@ -58,7 +70,7 @@ canvas.addEventListener('mouseup', function() {
     canvas.removeEventListener('mousemove', onPaint, false);
 }, false);
 
-function resetArea() {
+function drawResetArea() {
   canvas.removeEventListener('mousemove', onPaint, false);
 };
 
@@ -67,7 +79,8 @@ function resetArea() {
 brush.lineWidth = 5;
 brush.lineJoin = 'round';
 brush.lineCap = 'round';
-brush.strokeStyle = '#141414';
+brush.strokeStyle = '#1A1919';
+instrumentBrush.style.backgroundColor = '#6868AC';
 
 //clear
 
@@ -103,34 +116,57 @@ function setEraserSize(clickArea) {
 //palette
 
 function defaultPaletteChoice() {
-  paletteWhite.style.borderRadius = '5px';
-  paletteRed.style.borderRadius = '5px';
-  paletteBlue.style.borderRadius = '5px';
-  paletteGreen.style.borderRadius = '5px';
+  paletteWhite.style.border = 'none';
+  paletteWhite.style.width = '20px';
+  paletteWhite.style.height = '20px';
+
+  paletteRed.style.border = 'none';
+  paletteRed.style.width = '20px';
+  paletteRed.style.height = '20px';
+
+  paletteBlue.style.border = 'none';
+  paletteBlue.style.width = '20px';
+  paletteBlue.style.height = '20px';
+
+  paletteGreen.style.border = 'none';
+  paletteGreen.style.width = '20px';
+  paletteGreen.style.height = '20px';
 };
 
 function setColorWhite() {
-  brush.strokeStyle = '#F6F6F6';
+  brush.strokeStyle = colorWhite;
   defaultPaletteChoice();
-  paletteWhite.style.borderRadius = '20px';
+  paletteWhite.style.border = '2px #CFB5B5 solid';
+  paletteWhite.style.width = '16px';
+  paletteWhite.style.height = '16px';
+  primaryColor.style.backgroundColor = colorWhite;
 };
 
 function setColorRed() {
-  brush.strokeStyle = '#E61932';
+  brush.strokeStyle = colorRed;
   defaultPaletteChoice();
-  paletteRed.style.borderRadius = '20px';
+  paletteRed.style.border = '2px #CFB5B5 solid';
+  paletteRed.style.width = '16px';
+  paletteRed.style.height = '16px';
+  primaryColor.style.backgroundColor = colorRed;
 };
 
 function setColorBlue() {
-  brush.strokeStyle = '#565BCF';
+  brush.strokeStyle = colorBlue;
   defaultPaletteChoice();
-  paletteBlue.style.borderRadius = '20px';
+  paletteBlue.style.border = '2px #CFB5B5 solid';
+  paletteBlue.style.width = '16px';
+  paletteBlue.style.height = '16px';
+  primaryColor.style.backgroundColor = colorBlue;
 };
 
 function setColorGreen() {
-  brush.strokeStyle = '#6BB438';
+  brush.strokeStyle = colorGreen;
   defaultPaletteChoice();
-  paletteGreen.style.borderRadius = '20px';
+  paletteGreen.style.border = '2px #CFB5B5 solid';
+  paletteGreen.style.width = '16px';
+  paletteGreen.style.height = '16px';
+  primaryColor.style.backgroundColor = colorGreen;
 };
 
 //colorpicker
@@ -141,4 +177,27 @@ function setPrimaryColor() {
 
 function setSecondaryColor() {
 
+};
+
+//instruments
+
+function defaultInstrumentChoice() {
+  instrumentBrush.style.backgroundColor = '#CFB5B5';
+  instrumentEraser.style.backgroundColor = '#CFB5B5';
+  instrumentColorpicker.style.backgroundColor = '#CFB5B5';
+};
+
+function pickInstrumentBrush() {
+  defaultInstrumentChoice();
+  instrumentBrush.style.backgroundColor = '#6868AC';
+};
+
+function pickInstrumentEraser() {
+  defaultInstrumentChoice();
+  instrumentEraser.style.backgroundColor = '#6868AC';
+};
+
+function pickInstrumentColorpicker() {
+  defaultInstrumentChoice();
+  instrumentColorpicker.style.backgroundColor = '#6868AC';
 };

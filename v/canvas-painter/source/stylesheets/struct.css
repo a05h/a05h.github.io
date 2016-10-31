@@ -18,13 +18,13 @@ body {
 
 
 
-#instruments-container {
+#controls-container {
   float: left;
   height: 640px;
   padding: 10px;
 }
 
-  #instruments-container > * {
+  #controls-container > * {
     float: left;
   }
 
@@ -42,10 +42,12 @@ body {
       #vertical-1 {
         height: 400px;
         /*palette-container*/
+        /*colorpicker-container*/
       }
 
       #vertical-2 {
         height: 209px;
+        /*instruments-container*/
       }
 
     #horizontal-sections {
