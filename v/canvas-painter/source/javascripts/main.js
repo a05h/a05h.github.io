@@ -14,6 +14,11 @@ paletteBlue.addEventListener('click', setColorBlue, false);
 var paletteGreen = document.getElementById('palette-green');
 paletteGreen.addEventListener('click', setColorGreen, false);
 
+var primaryColor = document.getElementById('primary-color');
+primaryColor.addEventListener('click', setPrimaryColor, false);
+var secondaryColor = document.getElementById('secondary-color');
+secondaryColor.addEventListener('click', setSecondaryColor, false);
+
 var brushWidthContainer = document.getElementById('brush-width-container');
 brushWidthContainer.addEventListener('click', setBrushSize, false);
 var brushWidthElement = document.getElementById('brush-width-element');
@@ -126,4 +131,14 @@ function setColorGreen() {
   brush.strokeStyle = '#6BB438';
   defaultPaletteChoice();
   paletteGreen.style.borderRadius = '20px';
+};
+
+//colorpicker
+
+function setPrimaryColor() {
+
+};
+
+function setSecondaryColor() {
+
 };

@@ -74,6 +74,26 @@
     background-color: #6BB438;
   }
 
+#colorpicker-container {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 1px;
+  background-color: #AEAEB6;
+}
+
+ #primary-color {
+   width: 25px;
+   height: 25px;
+   background-color: #6868AC;
+ }
+
+ #secondary-color {
+   width: 25px;
+   height: 25px;
+   background-color: #F6F6F6;
+ }
+
 /*horizontal-sections > horizontal-1*/
 
 #brush-width-container {
