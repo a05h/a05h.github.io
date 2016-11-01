@@ -30,6 +30,8 @@ var brushWidthContainer = document.getElementById('brush-width-container');
 brushWidthContainer.addEventListener('click', setBrushSize, false);
 var brushWidthElement = document.getElementById('brush-width-element');
 
+var brushValue = document.getElementById('brush-value');
+
 var eraserWidthContainer = document.getElementById('eraser-width-container');
 eraserWidthContainer.addEventListener('click', setEraserSize, false);
 var eraserWidthElement = document.getElementById('eraser-width-element');
@@ -76,7 +78,7 @@ function drawResetArea() {
 
 //basic values
 
-brush.lineWidth = 5;
+brush.lineWidth = 10;
 brush.lineJoin = 'round';
 brush.lineCap = 'round';
 brush.strokeStyle = '#1A1919';
@@ -104,6 +106,7 @@ function setBrushSize(clickArea) {
     var thisClick = (clickArea.pageX - 22) / 5;
   };
   brush.lineWidth = thisClick;
+  brushValue.innerHTML = parseFloat(thisClick).toFixed(1);
 };
 
 function setEraserSize(clickArea) {

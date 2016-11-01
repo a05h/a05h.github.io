@@ -133,14 +133,14 @@
 
 /*horizontal-sections > horizontal-1*/
 
-#title-name { /*instrument titles*/
+.title-name { /*instrument titles*/
   font-family: "Sans", sans;
   font-size: 11px;
   color: #9A9797;
   margin: 0px 0px 0px 5px;
 }
 
-#title-value { /*instrument titles*/
+.title-value { /*instrument titles*/
   font-family: "Sans", sans;
   font-size: 11px;
   color: #9A9797;
