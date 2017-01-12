@@ -57,14 +57,14 @@ p {
   left: 0;
   background-color: #F0F0F0;
   transition: width 0.3s;
-  padding-top: 20px;
+  padding-top: 60px;
   border-right: 1px solid #E4E4E4;
   overflow-x: hidden;
   z-index: 1;
 }
 
 #navbar ul {
-  padding-left: 20px;
+  padding: 0 0 30px 20px;
 }
 
 #navbar ul li {
@@ -92,7 +92,7 @@ p {
   font-family: 'Sans', sans;
   font-weight: 400;
   font-size: 38px;
-  color: #4098D7;
+  color: #C3C4C5;
   transition: color 0.3s;
   cursor: pointer;
   margin: 3px 7px;
@@ -104,10 +104,34 @@ p {
 }
 
 #navbar-toggle:hover {
-  color: #85BCE3;
+  color: #4098D7;
   transition: color 0.3s;
 }
 
+#github-profile {
+  background-color: #F0F0F0;
+  top: 15px;
+  left: 109px;
+  position: absolute;
+  text-decoration: none;
+}
+
+#octocat-ico-container {
+  height: 32px;
+  width: 32px;
+  margin: 0 auto;
+}
+
+#octocat-ico {
+  background-image: url("../../main-srcs/images/icons/octocat-ico.png");
+  height: 32px;
+  width: 32px;
+}
+
+#github-profile p {
+  color: #C3C4C5;
+  margin: 2px 0;
+}
 
 /*--- main ---*/
 
@@ -179,6 +203,11 @@ main section {
   color: #D6D6D6;
   margin: 0;
   display: block;
+  cursor: default;
+  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 #empty-page-desc {
@@ -188,6 +217,11 @@ main section {
   font-weight: 700;
   color: #D6D6D6;
   display: block;
+  cursor: default;
+  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 #after-main {
