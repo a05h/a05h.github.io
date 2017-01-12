@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../main-srcs/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="./source/stylesheets/style.css">
+    <script src="../../main-srcs/javascripts/main.js"></script>
+    <script src="./source/javascripts/events.js"></script>
+    <script src="./source/javascripts/keycodes.js"></script>
+    <title>a05h</title>
+  </head>
+  <body>
+    <div id="body-container">
+
+      <header role="banner" id="header">
+        <nav id="navbar">
+          <ul>
+            <li><a href="../../index.html">Index</a></li>
+            <li><a href="./v/html5-player/index.html">HTML5-player</a></li>
+          </ul>
+        </nav>
+        <div id="navbar-toggle" onclick="navbarToggle();">&#8801;</div>
+        <section id="header-content">
+          <h2>HTML5-player</h2>
+        </section>
+      </header>
+
+      <main role="main" id="main">
+        <section>
+          <div id="interface">
+            <div id="video-container">
+              <p id="mute-indicator">mute</p>
+              <video id="video">
+                <source src="http://download.blender.org/peach/trailer/trailer_720p.mov" type="video/mp4">
+              </video>
+              <div id="controls-container">
+                <div id="button-play"></div>
+                <p id="time-done">00:00</p>
+                <div id="button-mute"></div>
+                <div id="button-fullscreen"></div>
+              </div>
+              <div id="volume-container">
+                <div id="volume-element"></div>
+              </div>
+            </div>
+            <div id="progressbar-container">
+              <div id="progressbar-element"></div>
+            </div>
+          </div>
+        </section>
+        <div class="double-block">
+          <section class="sub-double-block">
+            <h3>Keycodes:</h3>
+            <p>Space - stop/play,<br>
+               M - mute/unmute,<br>
+               Arrow Left - video progress -10 sec,<br>
+               Arrow Right - video progress +10 sec,<br>
+               Arrow Up - sound +10%,<br>
+               Arrow Down - sound -10%,<br>
+               F - fullscreen.</p>
+          </section>
+          <section class="sub-double-block">
+            <h3>Source:</h3>
+            <a class="source-link-desc" href="https://github.com/a05h/html5-player"><span class="source-link">repo</span> html5-player</a>
+            <a class="source-link-desc" href="https://peach.blender.org/"><span class="source-link">blender</span> trailer</a>
+          </section>
+          <section class="sub-double-block">
+            <p>The demo is equal to 15 commit.</p>
+          </section>
+        </div>
+
+        <div id="after-main"></div>
+      </main>
+
+      <footer role="contentinfo" id="footer">
+
+      </footer>
+
+    </div>
+  </body>
+</html>

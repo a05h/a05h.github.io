@@ -45,7 +45,7 @@ p {
   font-weight: 300;
   font-size: 20px;
   text-transform: uppercase;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #565656;
 }
 
@@ -117,19 +117,62 @@ main {
   padding-bottom:60px;
 }
 
+.source-link {
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #BFDEF4;
+  color: #6F6F6F;
+  padding: 5px 6px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  min-width: 20px;
+  text-transform: uppercase;
+}
+
+.source-link-desc {
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #4FA7DF;
+  color: white;
+  margin: 4px 0 0 0;
+  padding-right: 6px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
 main section {
   margin: 0 auto;
   padding: 0 10px 0 55px;
   max-width: 900px;
 }
 
-#main .flex-page-block {
+.flex-page-block {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flex-page-block h1 {
+.double-block {
+  margin: 0 auto;
+  padding: 0 10px 0 55px;
+  max-width: 900px;
+}
+
+.sub-double-block {
+  margin: 0;
+  width: 40%;
+  display: inline-block;
+  text-align: left;
+  float: left;
+}
+
+#empty-page-symb {
   font-size: 360px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
@@ -138,13 +181,17 @@ main section {
   display: block;
 }
 
-main section span {
+#empty-page-desc {
   font-size: 54px;
   line-height: 0.8;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   color: #D6D6D6;
   display: block;
+}
+
+#after-main {
+  clear: left;
 }
 
 /*--- footer ---*/
