@@ -3,25 +3,19 @@
 let navbarIsShown = false;
 
 function navbarToggle() {
+  let navbar = document.getElementById("navbar"),
+      mask = document.getElementById("body-mask");
   if (!navbarIsShown) {
-    showNavbar();
+    navbar.style.width = "250px";
+    mask.style.height = "100%";
+    mask.style.width = "100%";
+    mask.style.backgroundColor = "rgba(50,50,50,0.3)";
     navbarIsShown = true;
   } else {
-    hideNavbar();
+    navbar.style.width = "0";
+    mask.style.height = "0";
+    mask.style.width = "0";
+    mask.style.backgroundColor = "rgba(50,50,50,0)";
     navbarIsShown = false;
   }
-};
-
-function showNavbar() {
-  document.getElementById("navbar").style.width = "250px";
-  document.getElementById("header").style.marginLeft = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.getElementById("footer").style.marginLeft = "250px";
-};
-
-function hideNavbar() {
-  document.getElementById("navbar").style.width = "0";
-  document.getElementById("header").style.marginLeft = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.getElementById("footer").style.marginLeft = "0";
 };
