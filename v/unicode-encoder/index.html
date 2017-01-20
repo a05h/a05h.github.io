@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../main-srcs/images/icons/octocat-ico.png">
+    <link rel="shortcut icon" href="../../main-srcs/images/icons/octocat-ico.png">
+    <link rel="stylesheet" type="text/css" href="../../main-srcs/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="./source/stylesheets/special.css">
+    <script src="../../main-srcs/javascripts/main.js"></script>
+    <script src="./source/javascripts/special.js"></script>
+    <title>a05h</title>
+  </head>
+  <body>
+    <div id="body-mask" onclick="navbarToggle();"></div>
+    <div id="body-container">
+
+      <header role="banner" id="header">
+        <nav id="navbar">
+          <ul>
+            <li><a href="../../index.html">Index</a></li>
+            <li><a href="../../v/unicode-encoder/index.html">Unicode encoder</a></li>
+            <li><a href="../../v/html5-player/index.html">HTML5-player</a></li>
+
+          </ul>
+          <a id="github-profile" href="https://github.com/a05h">
+            <div id="octocat-ico-container">
+              <div id="octocat-ico"></div>
+            </div>
+            <p></p>
+          </a>
+        </nav>
+        <div id="navbar-toggle" onclick="navbarToggle();">&#8801;</div>
+        <section id="header-content">
+          <h2>Unicode encoder</h2>
+        </section>
+      </header>
+
+      <main role="main" id="main">
+        <section class="flex-page-block">
+          <p> (ﾉ´ヮ`)ﾉ *:･ﾟ*.｡･'ヽ(°〇°)ﾉ </p>
+        </section>
+        <section>
+          <textarea id="input" autofocus></textarea>
+          <div id="encode-button-container">
+            <button id="encode-button"  onclick="encode();">encode</button>
+          </div>
+        </section>
+        <section>
+          <div class="quat">
+            <button class="get-string" onclick="copy(bufferUH);">get all as string</button>
+            <p class="line-number"></p>
+            <p id="uni-hex"></p>
+          </div>
+          <div class="quat">
+            <button class="get-string" onclick="copy(bufferNH);">get all as string</button>
+            <p class="line-number"></p>
+            <p id="num-hex"></p>
+          </div>
+          <div class="quat">
+            <button class="get-string" onclick="copy(bufferUD);">get all as string</button>
+            <p class="line-number"></p>
+            <p id="uni-dec"></p>
+          </div>
+          <div class="quat">
+            <button class="get-string" onclick="copy(bufferND);">get all as string</button>
+            <p class="line-number"></p>
+            <p id="num-dec"></p>
+          </div>
+          
+        </section>
+        <section>
+          <h3>Source:</h3>
+          <a class="source-link-desc" href="https://gist.github.com/a05h/5afc83dc97c3d59424ca2bd03d29f7cc"><span class="source-link">gist</span>algorithm</a>
+        </section>
+
+        <div id="after-main"></div>
+      </main>
+
+      <footer role="contentinfo" id="footer">
+        <section>
+          <p></p>
+        </section>
+      </footer>
+
+    </div>
+  </body>
+</html>
