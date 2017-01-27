@@ -15,6 +15,12 @@
   </head>
   <body>
     <div id="body-mask" onclick="navbarToggle();"></div>
+    <div id=modal-container>
+      <div class="modal" id="show-string">
+        <textarea id="output" autofocus></textarea>
+        <button id="close-modal" onclick="closeModal();">Close</button>
+      </div>
+    </div>
     <div id="body-container">
 
       <header role="banner" id="header">
@@ -34,7 +40,7 @@
         </nav>
         <div id="navbar-toggle" onclick="navbarToggle();">&#8801;</div>
         <section id="header-content">
-          <h2>Unicode encoder</h2>
+          <h2></h2>
         </section>
       </header>
 

@@ -77,6 +77,15 @@ function encode() {
 };
 
 function copy(buffer) {
-  prompt("", buffer);
+  document.getElementById("modal-container").style.display = "block";
+  document.getElementById("output").value = buffer;
+  document.getElementById("output").select();
+  
 };
+
+function closeModal() {
+  document.getElementById("modal-container").style.display = "none";
+};
+
+
 
