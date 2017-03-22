@@ -41,6 +41,7 @@ function stringToUnicode(string, type = error) {
   }
 };
 
+
 let bufferUH, bufferNH, bufferUD, bufferND;
 
 function encode() {
@@ -76,12 +77,13 @@ function encode() {
   document.getElementById("num-dec").innerHTML = val4.join("<br>");
 };
 
+
 function copy(buffer) {
   document.getElementById("modal-container").style.display = "block";
   document.getElementById("output").value = buffer;
   document.getElementById("output").select();
-  
 };
+
 
 function closeModal() {
   document.getElementById("modal-container").style.display = "none";
