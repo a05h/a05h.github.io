@@ -1,0 +1,116 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+#menu-buttons {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#bookmarks-toggle {
+  font-family: 'Sans', sans;
+  font-weight: 400;
+  font-size: 38px;
+  color: #e5e5e5;
+  transition: color 0.3s;
+  cursor: pointer;
+  margin: 3px 7px;
+  padding: 0 5px;
+  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  z-index: 2;
+  display: block;
+}
+
+#bookmarks-toggle:hover {
+  color: #d0d0d0;
+  transition: color 0.3s;
+}
+
+#bookmarks-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50px;
+  width: 320px;
+  opacity: 0;
+  background-color: #f0f0f0; /*#f0f0f0*/
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, right 0.5s;
+  padding: 20px 0 10px 0;
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  overflow-y: auto;
+}
+
+#links-list a {
+  color: #909090;
+  text-decoration: none;
+  margin: 0 0 0 18px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+#links-list a:hover {
+  text-decoration: underline;
+}
+
+#searchengine-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50px;
+  width: 320px;
+  opacity: 0;
+  background-color: #f0f0f0; /*#f0f0f0*/
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, right 0.5s;
+}
+
+#flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+}
+
+#searchengine-title {
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 55px;
+  color: #7bbbe3;
+  font-size: 76px;
+  font-weight: 300;
+  font-family: 'Lobster', cursive;
+  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  cursor: default;
+}
+
+#search-line {
+  margin-top: 200px;
+  height: 30px;
+  width: 300px;
+  color: #acacac; /*#c1c1c1*/
+  background-color: #f8f8f8;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #f8f8f8;
+  transition: color 0.8s, border 0.5s;
+}
+
+#search-line:focus {
+  color: #9f9f9f; /*#9f9f9f*/
+  border-bottom: 1px solid #d8d8d8;
+  transition: color 0.8s, border 0.5s;
+}

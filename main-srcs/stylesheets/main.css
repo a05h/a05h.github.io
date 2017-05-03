@@ -61,7 +61,7 @@ p {
 }
 
 #navbar * {
-  display: none;
+  display: block; /*block - show navbar content, none - hide*/
 }
 
 #navbar {
@@ -117,7 +117,7 @@ p {
     -moz-user-select: none;
     -ms-user-select: none;
   z-index: 2;
-  display: none;
+  display: block; /*block - show navbar toggle button, none - hide*/
 }
 
 #navbar-toggle:hover {

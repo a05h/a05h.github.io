@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./source/stylesheets/style.css">
+    <script src="./source/dbs/bookmarks.json"></script>
+    <script src="./source/javascripts/main.js"></script>
+    <title>startpage</title>
+  </head>
+  <body onload="loadBookmarks();">
+    <div id="body-container">
+
+      <main role="main" id="main">
+        <section id="bookmarks-panel">
+          <div id="links-list"></div>
+        </section>
+        
+        <section id="searchengine-panel">
+          
+        </section>
+        
+        <section id="menu-buttons">
+          <div id="bookmarks-toggle" onclick="bookmarksToggle();">&#8801;</div>
+          <div id="bookmarks-toggle" onclick="sengineToggle();">&#9099;</div>
+        </section>
+        
+        <section id="flex">
+          <h1 id="searchengine-title" onclick="getSearchlineFocus();">Google</h1>
+          <form method="get" action="http://www.google.co.uk/search">
+            <input id="search-line" type="text" name="q" autofocus>
+          </form>
+        </section>
+      </main>
+
+    </div>
+  </body>
+</html>
