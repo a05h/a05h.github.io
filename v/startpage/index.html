@@ -14,8 +14,16 @@
 
       <main role="main" id="main">
         <section id="bookmarks-panel">
+          <button id="new-bookmark-toggle" onclick="newBookmarkToggle();">add bookmark</button>
           <div id="links-list"></div>
         </section>
+        
+        <div id="new-bookmark-window">
+          <input type="text" class="popup-input" id="bookmark-description" placeholder="description">
+          <input type="text" class="popup-input" id="bookmark-url" placeholder="url">
+          <button class="popup-button" id="add-bookmark" onclick="">ok</button>
+          <button class="popup-button" id="close-popup" onclick="newBookmarkToggle();">cancel</button>
+        </div>
         
         <section id="searchengine-panel">
           

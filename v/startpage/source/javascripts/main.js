@@ -4,14 +4,15 @@ function getSearchlineFocus() {
   document.getElementById('search-line').focus();
 };
 
+
 function loadBookmarks() {
-  let bookmarksDB = JSON.parse(bookmarks),
+  let bookmarksDB = JSON.parse(collection),
       linksList = document.getElementById('links-list');
   
   function cutDescription(description) {
     let cuttedDescription = description;
     if (description.length > 35) {
-      cuttedDescription = `${description.substr(0, 32)} ...`;
+      cuttedDescription = `${description.substr(0, 32)}...`;
     }
     return cuttedDescription;
   };
@@ -22,10 +23,24 @@ function loadBookmarks() {
 };
 
 
+let popupIsShown = false;
+function newBookmarkToggle() {
+  let popupWindow = document.getElementById('new-bookmark-window');
+  if (!popupIsShown) {
+    popupWindow.style.visibility = "visible";
+    popupWindow.style.opacity = "1";
+    popupIsShown = true;
+  } else {
+    popupWindow.style.opacity = "0";
+    popupWindow.style.visibility = "hidden";
+    popupIsShown = false;
+  }
+};
+
+
 let bookmarksIsShown = false;
 function bookmarksToggle() {
   let bookmarksPanel = document.getElementById('bookmarks-panel');
-  
   if (!bookmarksIsShown) {
     bookmarksPanel.style.visibility = "visible";
     bookmarksPanel.style.opacity = "1";
