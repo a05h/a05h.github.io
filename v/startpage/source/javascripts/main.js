@@ -27,14 +27,20 @@ let popupIsShown = false;
 function newBookmarkToggle() {
   let popupWindow = document.getElementById('new-bookmark-window');
   if (!popupIsShown) {
-    popupWindow.style.visibility = "visible";
-    popupWindow.style.opacity = "1";
+    popupWindow.style.visibility = 'visible';
+    popupWindow.style.opacity = '1';
     popupIsShown = true;
   } else {
-    popupWindow.style.opacity = "0";
-    popupWindow.style.visibility = "hidden";
+    popupWindow.style.opacity = '0';
+    popupWindow.style.visibility = 'hidden';
     popupIsShown = false;
   }
+};
+
+
+function clearInputs() {
+  document.getElementById('bookmark-description').value = '';
+  document.getElementById('bookmark-url').value = '';
 };
 
 
@@ -42,14 +48,14 @@ let bookmarksIsShown = false;
 function bookmarksToggle() {
   let bookmarksPanel = document.getElementById('bookmarks-panel');
   if (!bookmarksIsShown) {
-    bookmarksPanel.style.visibility = "visible";
-    bookmarksPanel.style.opacity = "1";
-    bookmarksPanel.style.right = "60px";
+    bookmarksPanel.style.visibility = 'visible';
+    bookmarksPanel.style.opacity = '1';
+    bookmarksPanel.style.right = '60px';
     bookmarksIsShown = true;
   } else {
-    bookmarksPanel.style.opacity = "0";
-    bookmarksPanel.style.visibility = "hidden";
-    bookmarksPanel.style.right = "50px";
+    bookmarksPanel.style.opacity = '0';
+    bookmarksPanel.style.visibility = 'hidden';
+    bookmarksPanel.style.right = '50px';
     bookmarksIsShown = false;
   } 
 };
@@ -59,14 +65,14 @@ let sengineIsShown = false;
 function sengineToggle() {
   let senginePanel = document.getElementById('searchengine-panel');
   if (!sengineIsShown) {
-    senginePanel.style.visibility = "visible";
-    senginePanel.style.opacity = "1";
-    senginePanel.style.right = "60px";
+    senginePanel.style.visibility = 'visible';
+    senginePanel.style.opacity = '1';
+    senginePanel.style.right = '60px';
     sengineIsShown = true;
   } else {
-    senginePanel.style.opacity = "0";
-    senginePanel.style.visibility = "hidden";
-    senginePanel.style.right = "50px";
+    senginePanel.style.opacity = '0';
+    senginePanel.style.visibility = 'hidden';
+    senginePanel.style.right = '50px';
     sengineIsShown = false;
   } 
 };
