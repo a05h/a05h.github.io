@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette:300,400,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Play:300,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./source/stylesheets/style.css">
     <script src="./source/dbs/bookmarks.json"></script>
     <script src="./source/javascripts/main.js"></script>
-    <title>startpage</title>
+    <title>Google</title>
   </head>
   <body onload="loadBookmarks();">
     <div id="body-container">
 
       <main role="main" id="main">
         <section id="bookmarks-panel">
-          <button id="new-bookmark-toggle" onclick="newBookmarkToggle();">add bookmark</button>
           <div id="links-list"></div>
         </section>
         
-        <div id="new-bookmark-window">
-          <input type="text" class="popup-input" id="bookmark-description" placeholder="description">
-          <input type="text" class="popup-input" id="bookmark-url" placeholder="url">
-          <button class="popup-button" id="add-bookmark" onclick="">ok</button>
-          <button class="popup-button" id="close-popup" onclick="newBookmarkToggle();clearInputs();">cancel</button>
-        </div>
-        
         <section id="searchengine-panel">
-          
+          <div class="searchengine-bg" onclick="changeSearchEngine('google');">
+            <p class="searchengine-title" id="google-se">Google</p>
+          </div>
+          <div class="searchengine-bg" onclick="changeSearchEngine('duckDuckGo');">
+            <p class="searchengine-title" id="duckduckgo-se">DuckDuckGo</p>
+          </div>
+          <div class="searchengine-bg" onclick="changeSearchEngine('proxy');">
+            <p class="searchengine-title" id="proxy-se">Proxy</p>
+          </div>
         </section>
         
         <section id="menu-buttons">
@@ -35,8 +37,8 @@
         </section>
         
         <section id="flex">
-          <h1 id="searchengine-title" onclick="getSearchlineFocus();">Google</h1>
-          <form method="get" action="http://www.google.co.uk/search">
+          <h1 id="searchengine-title" onclick="hidePanels();getSearchlineFocus();">Google</h1>
+          <form id="search-form" method="get" action="http://www.google.co.uk/search">
             <input id="search-line" type="text" name="q" autofocus>
           </form>
         </section>
