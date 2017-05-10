@@ -1,5 +1,6 @@
 'use strict';
 
+
 function getSearchlineFocus() {
   document.getElementById('search-line').focus();
 };
@@ -55,6 +56,21 @@ function sengineToggle() {
 };
 
 
+let serverListIsShown = false;
+function serverListToggle() {
+  let serverList = document.getElementById('server-list');
+  if (!serverListIsShown) {
+    serverList.style.visibility = 'visible';
+    serverList.style.opacity = '1';
+    serverListIsShown = true;
+  } else {
+    serverList.style.opacity = '0';
+    serverList.style.visibility = 'hidden';
+    serverListIsShown = false;
+  }
+};
+
+
 function hidePanels() {
   let bookmarksPanel = document.getElementById('bookmarks-panel'),
       senginePanel = document.getElementById('searchengine-panel');
@@ -73,7 +89,8 @@ let currentSearchEngine = 'Google';
 function changeSearchEngine(searchEngine = google) {
   let form = document.getElementById('search-form'),
       line = document.getElementById('search-line'),
-      title = document.getElementById('searchengine-title');
+      title = document.getElementById('searchengine-title'),
+      proxyMark = document.getElementById('proxy-mark');
   switch (searchEngine) {
     case 'google':
       form.action = 'http://www.google.co.uk/search';
@@ -85,6 +102,9 @@ function changeSearchEngine(searchEngine = google) {
       title.style.margin = '-50px 0 0 55px';
       title.style.fontSize = '76px';
       title.style.fontWeight = '300';
+      title.style.cursor = 'default';
+      proxyMark.style.visibility = 'hidden';
+      proxyMark.style.cursor = 'default';
       document.title = 'Google';
       currentSearchEngine = 'Google';
       break;
@@ -98,6 +118,9 @@ function changeSearchEngine(searchEngine = google) {
       title.style.margin = '-40px 0 0 -15px';
       title.style.fontSize = '62px';
       title.style.fontWeight = '400';
+      title.style.cursor = 'default';
+      proxyMark.style.visibility = 'hidden';
+      proxyMark.style.cursor = 'default';
       document.title = 'DuckDuckGo';
       currentSearchEngine = 'DuckDuckGo';
       break;
@@ -108,9 +131,12 @@ function changeSearchEngine(searchEngine = google) {
       title.innerHTML = 'Proxy';
       title.style.color = '#e37b7b';
       title.style.fontFamily = "'Play', sans-serif";
-      title.style.margin = '-50px 0 0 63px';
+      title.style.margin = '-50px 0 0 61px';
       title.style.fontSize = '76px';
       title.style.fontWeight = '300';
+      title.style.cursor = 'pointer';
+      proxyMark.style.visibility = 'visible';
+      proxyMark.style.cursor = 'pointer';
       document.title = 'Proxy';
       currentSearchEngine = 'Proxy';
       break;
@@ -120,73 +146,84 @@ function changeSearchEngine(searchEngine = google) {
 };
 
 
-function changeProxyServer(server = 'eu2') {
+function titleClick() {
   if (currentSearchEngine === 'Proxy') {
-    let form = document.getElementById('search-form');
-    switch (server) {
-      case 'eu1':
-        form.action = 'https://eu1.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'eu2':
-        form.action = 'https://eu2.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'eu3':
-        form.action = 'https://eu3.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'eu4':
-        form.action = 'https://eu4.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'eu5':
-        form.action = 'https://eu5.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'eu6':
-        form.action = 'https://eu6.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us1':
-        form.action = 'https://us1.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us2':
-        form.action = 'https://us2.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us3':
-        form.action = 'https://us3.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us4':
-        form.action = 'https://us4.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us5':
-        form.action = 'https://us5.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us6':
-        form.action = 'https://us6.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us7':
-        form.action = 'https://us7.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us8':
-        form.action = 'https://us8.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us9':
-        form.action = 'https://us9.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us10':
-        form.action = 'https://us10.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us11':
-        form.action = 'https://us11.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us12':
-        form.action = 'https://us12.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us13':
-        form.action = 'https://us13.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us14':
-        form.action = 'https://us14.proxysite.com/includes/process.php?action=update';
-        break;
-      case 'us15':
-        form.action = 'https://us15.proxysite.com/includes/process.php?action=update';
-        break;
-    }
+    serverListToggle();
+  }
+  getSearchlineFocus();
+};
+
+
+function serverClick(select) {
+  
+};
+
+
+function changeProxyServer(server = 'eu2') {
+  let form = document.getElementById('search-form');
+  switch (server) {
+    case 'eu1':
+      form.action = 'https://eu1.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'eu2':
+      form.action = 'https://eu2.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'eu3':
+      form.action = 'https://eu3.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'eu4':
+      form.action = 'https://eu4.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'eu5':
+      form.action = 'https://eu5.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'eu6':
+      form.action = 'https://eu6.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us1':
+      form.action = 'https://us1.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us2':
+      form.action = 'https://us2.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us3':
+      form.action = 'https://us3.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us4':
+      form.action = 'https://us4.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us5':
+      form.action = 'https://us5.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us6':
+      form.action = 'https://us6.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us7':
+      form.action = 'https://us7.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us8':
+      form.action = 'https://us8.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us9':
+      form.action = 'https://us9.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us10':
+      form.action = 'https://us10.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us11':
+      form.action = 'https://us11.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us12':
+      form.action = 'https://us12.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us13':
+      form.action = 'https://us13.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us14':
+      form.action = 'https://us14.proxysite.com/includes/process.php?action=update';
+      break;
+    case 'us15':
+      form.action = 'https://us15.proxysite.com/includes/process.php?action=update';
+      break;
   }
 };
