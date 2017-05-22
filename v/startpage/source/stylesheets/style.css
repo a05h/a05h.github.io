@@ -246,3 +246,12 @@ html, body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
+#server-list ul li:hover {
+  background-color: #e37b7b;
+  color: #f8f8f8;
+}
+
+#current-element {
+  background-color: #e37b7b;
+}
