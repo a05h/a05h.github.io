@@ -169,29 +169,6 @@ html, body {
   visibility: hidden;
 }
 
-
-#current-server-region {
-  font-family: 'Play', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #e37b7b;
-  position: relative;
-  margin: 0 0 0 -23px;
-  user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-#current-server-number {
-  font-family: 'Play', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: #f8f8f8;
-  position: relative;
-  margin: 0 0 0 10px;
-}
-
 #search-line {
   margin-top: 200px;
   height: 30px;
@@ -211,47 +188,4 @@ html, body {
   color: #9f9f9f;
   border-bottom: 1px solid #d8d8d8;
   transition: color 0.8s, border 0.5s;
-}
-
-#server-list {
-  width: 340px;
-  position: absolute;
-  margin: 160px 0 0 -320px;
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-}
-
-#server-list ul {
-  margin: 10px 0;
-  padding: 0;
-  cursor: default;
-  user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-#server-list ul li {
-  display: inline;
-  font-family: 'Lato', sans-serif;
-  color: #e37b7b;
-  background-color: #f8f8f8;
-  padding: 1px 4px 2px 4px;
-  border-radius: 3px;
-  cursor: pointer;
-  user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-#server-list ul li:hover {
-  background-color: #e37b7b;
-  color: #f8f8f8;
-}
-
-#current-element {
-  background-color: #e37b7b;
 }
